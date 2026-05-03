@@ -35,7 +35,7 @@ export default function ServerDetail() {
       const serverId = Number(id);
       const foundServer = mockServers.find((s) => s.id === serverId);
       const serverSignals = mockSignals.filter(
-        (s) => s.company?.id === serverId,
+        (s) => s.server === foundServer?.name,
       );
 
       setServer(foundServer || null);
@@ -47,13 +47,6 @@ export default function ServerDetail() {
   // ==========================================================
   // HELPERS
   // ==========================================================
-
-  const statusColor = (status: string) => {
-    if (status === "healthy") return "text-emerald-400";
-    if (status === "warning") return "text-yellow-400";
-
-    return "text-red-400";
-  };
 
   const formatTime = (value: string | null) => {
     if (!value) return "never";

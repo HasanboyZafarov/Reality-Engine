@@ -7,7 +7,7 @@ type Incident = {
   created_at: string;
 };
 
-export default function IncidentTimeline({ agentId }: { agentId: number }) {
+export default function IncidentTimeline({ agentId: _agentId }: { agentId: number }) {
   const [incidents, setIncidents] = useState<Incident[]>([]);
   const [loading, setLoading] = useState(true);
 

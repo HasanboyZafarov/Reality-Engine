@@ -12,12 +12,6 @@ import {
 import { useEffect, useState } from "react";
 import { mockMetrics } from "../../data/mockData";
 
-type Metric = {
-  metric: "cpu" | "ram" | "disk";
-  value: number;
-  created_at: string;
-};
-
 type ChartRow = {
   time: string;
   cpu?: number;
@@ -25,7 +19,7 @@ type ChartRow = {
   disk?: number;
 };
 
-export default function MetricsChart({ agentId }: { agentId: number }) {
+export default function MetricsChart({ agentId: _agentId }: { agentId: number }) {
   const [data, setData] = useState<ChartRow[]>([]);
   const [loading, setLoading] = useState(true);
 

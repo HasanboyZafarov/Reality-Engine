@@ -13,9 +13,6 @@ import {
   Tooltip,
   Legend,
   ResponsiveContainer,
-  PieChart,
-  Pie,
-  Cell,
 } from "recharts";
 import {
   overallStats,
@@ -48,8 +45,6 @@ export default function Metrics() {
       </DashboardLayout>
     );
   }
-
-  const COLORS = ["#3b82f6", "#ef4444", "#10b981", "#f59e0b"];
 
   return (
     <DashboardLayout>

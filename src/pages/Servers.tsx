@@ -14,7 +14,7 @@ type Server = {
 export default function Servers() {
   const [servers, setServers] = useState<Server[]>([]);
   const [loading, setLoading] = useState(true);
-  const [error, setError] = useState<string | null>(null);
+  const [error] = useState<string | null>(null);
 
   useEffect(() => {
     // Simulate loading delay

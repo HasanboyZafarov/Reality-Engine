@@ -32,7 +32,6 @@ export default function Settings() {
     useState<MonitoringSettings>(monitoringSettings);
   const [security, setSecurity] = useState<SecuritySettings>(securitySettings);
   const [ui, setUI] = useState<UIPreferences>(uiPreferences);
-  const [showAddUser, setShowAddUser] = useState(false);
   const [showNewApiKey, setShowNewApiKey] = useState(false);
   const [saveMessage, setSaveMessage] = useState("");
 
@@ -61,7 +60,6 @@ export default function Settings() {
       lastLogin: new Date().toISOString(),
     };
     setUsers([...users, newUser]);
-    setShowAddUser(false);
   };
 
   const handleDeleteUser = (id: string) => {
@@ -200,7 +198,7 @@ export default function Settings() {
                   </h2>
                 </div>
                 <button
-                  onClick={() => setShowAddUser(true)}
+                  onClick={handleAddUser}
                   className="bg-blue-500/20 border border-blue-500/50 text-blue-400 px-4 py-2 rounded-lg hover:bg-blue-500/30 transition-all duration-300"
                 >
                   Add User
